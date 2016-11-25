@@ -11,9 +11,9 @@ var Grid = React.createClass({
         gridArray[height][width] = null;
       }
     }
-
-    //populate grid based on data, set required positions first, 
+    //populate grid based on data, set required positions first,
     return(
+      <p>{JSON.stringify(data)}</p>
     )
   }
 });

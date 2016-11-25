@@ -2,12 +2,6 @@ var React = require('react');
 var Box = require('../../components/box/index');
 
 var BoxData =  {
-  getData: function() {
-    return data;
-  },
-  addData:function(elem){
-    data.push(elem);
-  },
   data: [
   (<Box height={2} width={1}><p><span className="text-emph">Humaitek</span> is a design and innovation
     consulting studio. We design <span className="text-emph">websites</span>
@@ -41,6 +35,12 @@ var BoxData =  {
   </div></Box>),
   (<Box height={1} width={1}><img class="img-responsive" src="http://placehold.it/300x250" /></Box>),
   (<Box height={1} width={1}><img class="img-responsive" src="http://placehold.it/300x250" /></Box>)
-]
+],
+getData: function() {
+  return this.data;
+},
+addData:function(elem){
+  this.data.push(elem);
+}
 };
 module.exports = BoxData;
