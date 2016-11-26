@@ -17,7 +17,7 @@ var Grid = React.createClass({
       gridArray: gridArray
     };
   },
-  addBox(box,index) {
+  addBox(box) {
     var newGrid = this.state.gridArray;
     var boxWidth = box.props.width;
     var boxHeight = box.props.height;
@@ -26,16 +26,15 @@ var Grid = React.createClass({
       for(let width=0; width<newGrid.length; width++){
         let origin = [height,width];
         let end = [height+boxHeight,width+boxWidth];
-        if(this.verifyArea(newGrid, origin,end)) {
-          this.boundedAddBox(newGrid, box,index, origin, end);
+        if(this.verifyArea(origin,end)) {
+          return this.boundedAddBox(box, origin, end);
         }
       }
     }
     return false;
   },
-  verifyArea(grid, origin, end) {
-    console.log(origin);
-    console.log(grid);
+  verifyArea(origin, end) {
+    let grid = this.state.gridArray;
     let free = 0;
     let area = (end[0]-origin[0])*(end[1]-origin[1]);
     if(grid[origin[0]][origin[1]]===null) {
@@ -57,30 +56,21 @@ var Grid = React.createClass({
     }
     return false;
   },
-  boundedAddBox(grid, content, index, origin, end) {
-    grid[origin[0]][origin[1]]=content;
+  boundedAddBox(box, origin, end) {
+    let grid = this.state.gridArray;
+    grid[origin[0]][origin[1]] = box;
     for(let i=origin[0]+1;i<end[0];i++) {
       for(let j=origin[1]+1;j<end[1];j++){
-        grid[i][j]=index;
+        grid[i][j]=true;
       }
     }
+    return true;
   },
   render(){
     this.addBox(this.state.boxes[0],0);
-    this.state.gridArray.map(function(row){
-      row.map(function(box) {
-        return (
-          <div>
-            {box.props.children}
-          </div>
-        )
-      });
-    });
-    //populate grid based on data, set required positions first,
     return(
       <div>
-        <p>{this.state.gridArray.toString()}</p>
-        <p>{this.state.gridArray.toString()}</p>
+        {this.state.gridArray}
       </div>
     )
   }
