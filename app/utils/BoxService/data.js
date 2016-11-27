@@ -19,25 +19,26 @@ var BoxData =  {
       <p id="contact"><span id="contact-text">Contact</span></p>
       <form id="contact-form" className="hidden" action="" method="post">
         <fieldset>
-          <input placeholder="Name" type="text" tabindex="1" required autofocus />
+          <input placeholder="Name" type="text" tabIndex="1" required autoFocus />
         </fieldset>
         <fieldset>
-          <input placeholder="Email Address" type="email" tabindex="2" required />
+          <input placeholder="Email Address" type="email" tabIndex="2" required />
         </fieldset>
         <fieldset>
-          <input placeholder="Phone Number" type="tel" tabindex="3" required />
+          <input placeholder="Phone Number" type="tel" tabIndex="3" required />
         </fieldset>
         <fieldset>
-          <textarea placeholder="Type your Message Here...." tabindex="4" required></textarea>
+          <textarea placeholder="Type your Message Here...." tabIndex="4" required></textarea>
         </fieldset>
         <fieldset>
-          <button className="flat-butt" name="submit" type="submit" id="contact-submit" tabindex="5" data-submit="...Sending">Submit</button>
+          <button className="flat-butt" name="submit" type="submit" id="contact-submit" tabIndex="5" data-submit="...Sending">Submit</button>
         </fieldset>
       </form>
     </div>
   </Box>),
-  (<Box height={1} width={1} date={"11/25"} category={"normal"}><img class="img-responsive" src="http://placehold.it/300x250" /></Box>),
-  (<Box height={1} width={1} date={"11/25"} category={"normal"}><img class="img-responsive" src="http://placehold.it/300x250" /></Box>)
+  (<Box height={1} width={1} date={"11/25"} category={"normal"}><img className="img-responsive" src="http://placehold.it/300x250" /></Box>),
+  (<Box height={1} width={1} date={"11/25"} category={"normal"}><img className="img-responsive" src="http://placehold.it/300x250" /></Box>),
+  (<Box height={1} width={1} date={"11/25"} category={"normal"}><img className="img-responsive" src="http://placehold.it/300x250" /></Box>)
 ],
 getData: function() {
   return this.data;

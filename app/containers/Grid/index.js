@@ -58,16 +58,36 @@ var Grid = React.createClass({
   },
   boundedAddBox(box, origin, end) {
     let grid = this.state.gridArray;
-    grid[origin[0]][origin[1]] = box;
-    for(let i=origin[0]+1;i<end[0];i++) {
-      for(let j=origin[1]+1;j<end[1];j++){
-        grid[i][j]=true;
+    for(let i=origin[0];i<end[0];i++) {
+      for(let j=origin[1];j<end[1];j++){
+        if(i===origin[0] && j===origin[1]) {
+          grid[i][j] = box;
+        }
+        else{
+          grid[i][j]=true;
+        }
       }
     }
     return true;
   },
+  displayGrid () {
+    this.state.gridArray.map(function(row){
+      let line = row.map(function(elem) {
+        if(elem){
+          return("x");
+        }
+        else {
+          return("0");
+        }
+      });
+      console.log(JSON.stringify(line));
+    })
+  },
   render(){
-    this.addBox(this.state.boxes[0],0);
+    this.state.boxes.map(function(box) {
+      this.addBox(box);
+    },this);
+    this.displayGrid();
     return(
       <div>
         {this.state.gridArray}
