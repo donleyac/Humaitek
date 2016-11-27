@@ -22,6 +22,8 @@ var Grid = React.createClass({
     var boxWidth = box.props.width;
     var boxHeight = box.props.height;
 
+    console.log("boxHeight: " + boxHeight, "boxWidth: " + boxWidth);
+
     for(let height=0; height<newGrid.length; height++){
       for(let width=0; width<newGrid.length; width++){
         let origin = [height,width];
@@ -34,21 +36,28 @@ var Grid = React.createClass({
     return false;
   },
   verifyArea(origin, end) {
+    //console.log("Confirm Origin: " + origin);
+    //console.log("Confirm End: " + end);
     let grid = this.state.gridArray;
     let free = 0;
     let area = (end[0]-origin[0])*(end[1]-origin[1]);
+    if(end[0]>grid.length || end[1]>grid[0].length) {
+      return false;
+    }
     if(grid[origin[0]][origin[1]]===null) {
       for(let i=origin[0]; i<end[0]; i++) {
-        for(let j=origin[1]; i<end[1]; j++) {
+        for(let j=origin[1]; j<end[1]; j++) {
+          console.log("Loop: " + i +"," + j);
           if(grid[i][j]===null){
             free++;
             if(free===area){
-              console.log("origin: "+origin[0]+","+origin[1]);
-              console.log("end: "+end[0]+","+end[1]);
+              //console.log("origin: "+origin[0]+","+origin[1]);
+              //console.log("end: "+end[0]+","+end[1]);
               return true;
             }
           }
           else {
+            //console.log("False: " + i +"," + j);
             return false;
           }
         }
@@ -71,7 +80,7 @@ var Grid = React.createClass({
     return true;
   },
   displayGrid () {
-    this.state.gridArray.map(function(row){
+    this.state.gridArray.map(function(row, index){
       let line = row.map(function(elem) {
         if(elem){
           return("x");
@@ -80,7 +89,7 @@ var Grid = React.createClass({
           return("0");
         }
       });
-      console.log(JSON.stringify(line));
+      console.log(index + JSON.stringify(line));
     })
   },
   render(){
