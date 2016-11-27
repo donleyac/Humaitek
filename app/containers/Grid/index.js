@@ -1,5 +1,6 @@
 var React = require('react');
 var BoxService = require('../../utils/BoxService/index');
+require('./styles.scss');
 
 //Grid gets width and height props
 var Grid = React.createClass({
@@ -79,7 +80,7 @@ var Grid = React.createClass({
     }
     return true;
   },
-  displayGrid () {
+  consoleDisplayGrid () {
     this.state.gridArray.map(function(row, index){
       let line = row.map(function(elem) {
         if(elem){
@@ -96,9 +97,9 @@ var Grid = React.createClass({
     this.state.boxes.map(function(box) {
       this.addBox(box);
     },this);
-    this.displayGrid();
+    this.consoleDisplayGrid();
     return(
-      <div>
+      <div className="container">
         {this.state.gridArray}
       </div>
     )
