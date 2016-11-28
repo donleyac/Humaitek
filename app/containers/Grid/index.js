@@ -93,13 +93,32 @@ var Grid = React.createClass({
       console.log(index + JSON.stringify(line));
     })
   },
+  handleResize() {
+    var w = window,
+    d = document,
+    documentElement = d.documentElement,
+    grid = d.getElementById('grid'),
+    width = w.innerWidth || documentElement.clientWidth || grid.clientWidth,
+    height = w.innerHeight|| documentElement.clientHeight|| grid.clientHeight;
+    this.setState({width: width, height: height});
+  },
+  componentWillMount: function() {
+    this.handleResize();
+  },
+  componentDidMount: function() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  componentWillUnmount: function() {
+    window.removeEventListener("resize", this.handleResize);
+  },
   render(){
     this.state.boxes.map(function(box) {
       this.addBox(box);
     },this);
     this.consoleDisplayGrid();
     return(
-      <div className="container">
+      <div id="grid" className="container">
+        <span>{this.state.width} x {this.state.height}</span>
         {this.state.gridArray}
       </div>
     )
