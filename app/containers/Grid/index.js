@@ -115,11 +115,27 @@ var Grid = React.createClass({
     this.state.boxes.map(function(box) {
       this.addBox(box);
     },this);
+
+    var newGrid = this.state.gridArray.map(function(row){
+      var boxes = row.map(function(box) {
+        if(box===true){
+          return box;
+        }
+        else{
+          let reference = this.state.width/this.props.width;
+          let newBox = React.cloneElement(box, {reference: reference});
+          console.log(newBox);
+          return newBox;
+        }
+      },this);
+      return boxes;
+    },this);
+    console.log(newGrid);
+    console.log(this.state.gridArray);
     this.consoleDisplayGrid();
     return(
       <div id="grid" className="container">
-        <span>{this.state.width} x {this.state.height}</span>
-        {this.state.gridArray}
+        {newGrid}
       </div>
     )
   }
