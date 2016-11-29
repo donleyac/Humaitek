@@ -4,12 +4,12 @@ var React = require('react');
 var Box = React.createClass({
   render(){
     var style = {
-      width: (this.props.reference * this.props.width-10),
-      height:(this.props.reference * this.props.height-10),
+      //width: (this.props.reference * this.props.width-10),
+      height:(this.props.reference * this.props.height),
       background: "grey"
     };
     return (
-      <div style={style} className="box">
+      <div style={style} className={this.props.className}>
         {this.props.reference*this.props.width}
         {this.props.children}
       </div>

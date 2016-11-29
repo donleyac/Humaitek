@@ -6,7 +6,7 @@ var Home = React.createClass({
     return(
       <div>
         <h1 className="title">Humaitek</h1>
-        <Grid width={4} height={4}></Grid>
+        <Grid width={12} height={12}></Grid>
       </div>
       )
     }

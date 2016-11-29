@@ -1,5 +1,6 @@
 var React = require('react');
 var BoxService = require('../../utils/BoxService/index');
+var classNames = require('classnames');
 require('./styles.scss');
 
 //Grid gets width and height props
@@ -48,7 +49,7 @@ var Grid = React.createClass({
     if(grid[origin[0]][origin[1]]===null) {
       for(let i=origin[0]; i<end[0]; i++) {
         for(let j=origin[1]; j<end[1]; j++) {
-          console.log("Loop: " + i +"," + j);
+          //console.log("Loop: " + i +"," + j);
           if(grid[i][j]===null){
             free++;
             if(free===area){
@@ -112,6 +113,7 @@ var Grid = React.createClass({
     window.removeEventListener("resize", this.handleResize);
   },
   render(){
+    this.consoleDisplayGrid();
     this.state.boxes.map(function(box) {
       this.addBox(box);
     },this);
@@ -122,16 +124,20 @@ var Grid = React.createClass({
           return box;
         }
         else{
+          let classWidth = "width-"+box.props.width;
+          let classHeight = "height-"+box.props.height;
+          let targetClasses = classNames({
+            'box': true,
+            [classWidth]:true,
+            [classHeight]:true
+          })
           let reference = this.state.width/this.props.width;
-          let newBox = React.cloneElement(box, {reference: reference});
-          console.log(newBox);
+          let newBox = React.cloneElement(box, {reference: reference, className:targetClasses});
           return newBox;
         }
       },this);
       return boxes;
     },this);
-    console.log(newGrid);
-    console.log(this.state.gridArray);
     this.consoleDisplayGrid();
     return(
       <div id="grid" className="container">
