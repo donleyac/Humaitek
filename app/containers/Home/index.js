@@ -1,6 +1,7 @@
 var React = require('react');
 var Box = require('../Box/index')
 
+
 var Home = React.createClass({
   handleResize() {
     var w = window,
@@ -22,6 +23,7 @@ var Home = React.createClass({
   },
   render: function(){
     var inputs = [
+      //container
       {width: 4,height:1},
       {content: (<p>About Us</p>),
         width: 1,
@@ -39,19 +41,29 @@ var Home = React.createClass({
         width: 1,
         height:1,
         isFull:true},
-        
-      {width: 1,height:3},
-      {width: 1,height:3},
-      {width: 2,height:3},
-      {width: 1,height:3},
-      {width: 2,height:2},
-      {width: 2,height:2},
+
+      //container
       {width: 1,height:3},
 
+      {width: 2,height:3},
       {content: (<p>Humaitek</p>),
         width: 2,
         height:2,
         isFull:true},
+      {width: 1,height:3},
+      {width: 2,height:2},
+      {width: 2,height:2},
+      {width: 1,height:3},
+      {content: (<p>LeftSide</p>),
+        width: 1,
+        height:2,
+        isFull:true},
+      {content: (<p>LowerLeftSide</p>),
+        width: 1,
+        height:1,
+        isFull:true},
+
+
       {width: 2,
         height:1,
       }];

@@ -1,8 +1,12 @@
 var React = require('react');
-
+require('./styles.scss')
 var Box = function(props){
+  let className = "box";
+  if(props.width&&props.height){
+    className= "box"+" width-"+props.width+" height-"+props.height;
+  }
   return (
-    <div className="box">
+    <div className={className}>
       {props.children}
     </div>
   )
@@ -16,7 +20,7 @@ var Grid = React.createClass({
       height: this.props.height,
       width: this.props.width,
     };
-    this.consoleDisplayGrid(context.grid);
+    //this.consoleDisplayGrid(context.grid);
     context = this.addInputs(context, this.props.inputs);
     return {
       context: context
@@ -39,8 +43,8 @@ var Grid = React.createClass({
         let local_grid = this.generateGrid(content.height,content.width);
         content["grid"]=local_grid;
       }
-      console.log("Adding:");
-      console.log(content);
+      //console.log("Adding:");
+      //console.log(content);
       let temp_context = this.addContentStart(context,content);
       if(temp_context){
         context=temp_context;
@@ -58,18 +62,18 @@ var Grid = React.createClass({
         let origin = [height,width];
         let end = [height+content.height,width+content.width];
         let is_addable = this.isAddable(context, origin,end, content);
-        console.log("Is Addable:" + is_addable);
+        //console.log("Is Addable:" + is_addable);
         if(is_addable) {
           //Already added internally
-          this.consoleDisplayGrid(context.grid);
+          //this.consoleDisplayGrid(context.grid);
           if(is_addable!==true){
             return is_addable;
           }
           context.grid = this.boundedAddContent(grid, content, origin, end);
-          this.consoleDisplayGrid(context.grid);
+          //this.consoleDisplayGrid(context.grid);
           if(this.isSubsetFull(grid,[0,0],[grid.length,grid[0].length])){
             context.isFull = true;
-            console.log("IsFULL"+context)
+            //console.log("IsFULL"+context)
           }
           return context;
         }
@@ -162,34 +166,37 @@ var Grid = React.createClass({
   },
   theRenderMachine(grid){
     console.log(grid);
-    var outside = grid.map(function(child){
-      if(child.grid){
-        return(
-          <Box>
-            {theRenderMachine(child.grid)}
-          </Box>
-        )
+    return grid.map(function(child){
+      if(Array.isArray(child)){
+        return this.theRenderMachine(child);
       }
-      else {
-        if(child!==true){
+      else if(child && typeof child==='object'){
+        if(child.grid){
           return(
-            <Box>
+            <Box  height={child.height} width={child.width}>
+              {this.theRenderMachine(child.grid)}
+            </Box>
+          )
+        }
+        else {
+          return(
+            <Box  height={child.height} width={child.width}>
               {child.content}
             </Box>
           )
         }
-        else{
-          return true;
-        }
       }
-    });
-    console.log(outside);
-    return outside;
+      else {
+        return true;
+      }
+    },this);
   },
   render(){
+    var grid = this.theRenderMachine(this.state.context.grid);
+    console.log(grid);
     return(
       <div>
-        {this.theRenderMachine(this.state.context.grid)}
+        {grid}
       </div>
     )
   }

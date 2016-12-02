@@ -1,17 +1,4 @@
-@import "~susy/sass/susy";
-
-// Configuring Susy Defaults
-$susy: (
-  global-box-sizing: border-box,
-  use-custom: (rem: true
-    )
-  );
-
-@include border-box-sizing;
-
-
 .container {
-  @include container;
   background-color: #fbeecb;
   width: 100%;
   padding-left: 0;
@@ -19,16 +6,33 @@ $susy: (
 }
 .box {
   border: black solid 1px;
+  float: left;
+}
+.width-1 {
+  margin: 0;
+  width: 470px;
+}
+.width-2 {
+  margin: 0;
+  width: 950px;
 }
 .width-3 {
-  @include span(25%);
   margin: 0;
+  width: 1430px;
 }
-.width-6 {
-  @include span(50%);
+.width-4 {
   margin: 0;
+  width: 1910px;
 }
-.width-9 {
-  @include span(75%);
-  margin: 0;
+.height-1 {
+  height: 200px;
+}
+.height-2 {
+  height: 400px;
+}
+.height-3 {
+  height: 600px;
+}
+.height-4 {
+  height: 800px;
 }
