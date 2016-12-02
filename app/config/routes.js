@@ -9,7 +9,7 @@ var Box = require('../containers/Box/index');
 
 var routes = (
   <Router history={hashHistory}>
-    <Route path ='/' component = {Box}></Route>
+    <Route path ='/' component = {Home}></Route>
   </Router>
 );
 
