@@ -1,10 +1,8 @@
 var React = require('react');
 require('./styles.scss')
 var Box = function(props){
-  let className = "box";
-  /*if(props.width&&props.height){
-    className= "box"+" width-"+props.width+" height-"+props.height;
-  }*/
+  let className = "box "+props.className;
+
   return (
     <div style={props.style} className={className}>
       {props.children}
@@ -172,10 +170,14 @@ var Grid = React.createClass({
         return this.theRenderMachine(child);
       }
       else if(child && typeof child==='object'){
+        let className = "";
+        if(child.className){
+          className=child.className;
+        }
         if(child.grid){
           let style = this.getStyle(child.width, child.height, true);
           return(
-            <Box style={style} height={child.height} width={child.width}>
+            <Box className={className} style={style} height={child.height} width={child.width}>
               {this.theRenderMachine(child.grid)}
             </Box>
           )
@@ -183,7 +185,7 @@ var Grid = React.createClass({
         else {
           let style = this.getStyle(child.width, child.height);
           return(
-            <Box style={style} height={child.height} width={child.width}>
+            <Box className={className} style={style} height={child.height} width={child.width}>
               {child.content}
             </Box>
           )
@@ -227,8 +229,9 @@ var Grid = React.createClass({
       new_height= (height/grid_width)*(window_width)+"px";
     }
     if(window_width<400){
-      new_width= window_width-10+"px";
+      new_width= window_width-20+"px";
       float= "none";
+      new_height=200+"px";
 
       if(container){
         new_height = "inherit";

@@ -1,6 +1,6 @@
 var React = require('react');
-var Grid = require('../Box/index')
-
+var Grid = require('../Box/index');
+require('./styles.scss');
 
 var Home = React.createClass({
   render: function(){
@@ -10,19 +10,23 @@ var Home = React.createClass({
       {content: (<p>About Us</p>),
         width: 1,
         height:1,
-        isFull:true},
+        isFull:true,
+        className:"top"},
       {content: (<p>What's New</p>),
         width: 1,
         height:1,
-        isFull:true},
+        isFull:true,
+        className:"top"},
       {content: (<p>Explore</p>),
         width: 1,
         height:1,
-        isFull:true},
+        isFull:true,
+        className:"top"},
       {content: (<p>Contact</p>),
         width: 1,
         height:1,
-        isFull:true},
+        isFull:true,
+        className:"top"},
 
       //container
       {width: 1,height:3},
