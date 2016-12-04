@@ -1,26 +1,8 @@
 var React = require('react');
-var Box = require('../Box/index')
+var Grid = require('../Box/index')
 
 
 var Home = React.createClass({
-  handleResize() {
-    var w = window,
-    d = document,
-    documentElement = d.documentElement,
-    grid = d.getElementById('grid'),
-    width = w.innerWidth || documentElement.clientWidth || grid.clientWidth,
-    height = w.innerHeight|| documentElement.clientHeight|| grid.clientHeight;
-    this.setState({width: width, height: height});
-  },
-  componentWillMount: function() {
-    this.handleResize();
-  },
-  componentDidMount: function() {
-    window.addEventListener("resize", this.handleResize);
-  },
-  componentWillUnmount: function() {
-    window.removeEventListener("resize", this.handleResize);
-  },
   render: function(){
     var inputs = [
       //container
@@ -44,11 +26,15 @@ var Home = React.createClass({
 
       //container
       {width: 1,height:3},
-
       {width: 2,height:3},
       {content: (<p>Humaitek</p>),
         width: 2,
         height:2,
+        isFull:true},
+      {width: 2,height:3},
+      {content: (<p>Lower Humaitek</p>),
+        width: 2,
+        height:1,
         isFull:true},
       {width: 1,height:3},
       {width: 2,height:2},
@@ -62,15 +48,31 @@ var Home = React.createClass({
         width: 1,
         height:1,
         isFull:true},
-
-
-      {width: 2,
+      {content: (<p>Deeper Left LeftSide</p>),
+        width: 2,
         height:1,
-      }];
+        isFull:true},
+      {content: (<p>Under Right</p>),
+        width: 1,
+        height:1,
+        isFull:true},
+      {content: (<p>Right Column</p>),
+        width: 1,
+        height:2,
+        isFull:true},
+      {content: (<p>Way bottom right Column</p>),
+        width: 2,
+        height:2,
+        isFull:true},
+      {content: (<p>Deepest Left LeftSide</p>),
+        width: 2,
+        height:1,
+        isFull:true}
+      ];
     return(
       <div>
-        <Box inputs={inputs} width={4} height={6}>
-        </Box>
+        <Grid inputs={inputs} width={4} height={6}>
+        </Grid>
       </div>
       )
     }

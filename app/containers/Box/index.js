@@ -2,11 +2,11 @@ var React = require('react');
 require('./styles.scss')
 var Box = function(props){
   let className = "box";
-  if(props.width&&props.height){
+  /*if(props.width&&props.height){
     className= "box"+" width-"+props.width+" height-"+props.height;
-  }
+  }*/
   return (
-    <div className={className}>
+    <div style={props.style} className={className}>
       {props.children}
     </div>
   )
@@ -23,7 +23,8 @@ var Grid = React.createClass({
     //this.consoleDisplayGrid(context.grid);
     context = this.addInputs(context, this.props.inputs);
     return {
-      context: context
+      context: context,
+      window_size: this.getWindowWidth()
     }
   },
   generateGrid(height, width){
@@ -101,7 +102,7 @@ var Grid = React.createClass({
         }
       }
     }
-    if(grid[0].length===content.width && grid.length===content.height){
+    if(grid[0].length===content.width && grid.length===content.height&&!content.isFull){
       return false;
     }
     if(origin[1]===0 || grid[origin[0]][0].height===content.height){
@@ -172,15 +173,17 @@ var Grid = React.createClass({
       }
       else if(child && typeof child==='object'){
         if(child.grid){
+          let style = this.getStyle(child.width, child.height, true);
           return(
-            <Box  height={child.height} width={child.width}>
+            <Box style={style} height={child.height} width={child.width}>
               {this.theRenderMachine(child.grid)}
             </Box>
           )
         }
         else {
+          let style = this.getStyle(child.width, child.height);
           return(
-            <Box  height={child.height} width={child.width}>
+            <Box style={style} height={child.height} width={child.width}>
               {child.content}
             </Box>
           )
@@ -191,11 +194,63 @@ var Grid = React.createClass({
       }
     },this);
   },
+  getWindowWidth(){
+    var w = window,
+    d = document,
+    documentElement = d.documentElement,
+    grid = d.getElementsByClassName('grid'),
+    width = w.innerWidth || documentElement.clientWidth || grid.clientWidth;
+    return width;
+  },
+  handleResize() {
+    let width = this.getWindowWidth();
+    this.setState({window_size:width});
+  },
+  componentWillMount: function() {
+    this.handleResize();
+  },
+  componentDidMount: function() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  componentWillUnmount: function() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  getStyle(width, height, container){
+    let grid_width = this.state.context.width;
+    let window_width = this.getWindowWidth();
+
+    let new_width = (width/grid_width)*(window_width-20)+"px";
+    let new_height = 250*height+"px";
+    let float = "left"
+
+    if(window_width<1000){
+      new_height= (height/grid_width)*(window_width)+"px";
+    }
+    if(window_width<400){
+      new_width= window_width-10+"px";
+      float= "none";
+
+      if(container){
+        new_height = "inherit";
+      }
+    }
+
+
+    console.log(new_width);
+    let style = {
+      width: new_width,
+      height: new_height,
+      float: float
+    };
+    return style
+  },
   render(){
     var grid = this.theRenderMachine(this.state.context.grid);
     console.log(grid);
+    let style = this.getStyle(this.props.width, this.props.height,true);
+    let className = "grid box";
     return(
-      <div>
+      <div style={style} className={className}>
         {grid}
       </div>
     )

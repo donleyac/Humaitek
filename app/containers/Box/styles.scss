@@ -1,38 +1,12 @@
-.container {
-  background-color: #fbeecb;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
 .box {
-  border: black solid 1px;
-  float: left;
+  outline:1px solid white;
+  background: #093377;
 }
-.width-1 {
-  margin: 0;
-  width: 470px;
-}
-.width-2 {
-  margin: 0;
-  width: 950px;
-}
-.width-3 {
-  margin: 0;
-  width: 1430px;
-}
-.width-4 {
-  margin: 0;
-  width: 1910px;
-}
-.height-1 {
-  height: 200px;
-}
-.height-2 {
-  height: 400px;
-}
-.height-3 {
-  height: 600px;
-}
-.height-4 {
-  height: 800px;
+.grid {
+  &{
+    margin: auto;
+  }
+  p {
+    color: white;
+  }
 }
