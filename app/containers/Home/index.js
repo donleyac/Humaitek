@@ -1,5 +1,6 @@
 var React = require('react');
 var Link = require('react-router').Link;
+var Grid = require('../Box/index');
 require('./styles.scss');
 
 var Home = React.createClass({
