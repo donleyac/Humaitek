@@ -1,5 +1,4 @@
 var React = require('react');
-var Grid = require('../Box/index');
 var Link = require('react-router').Link;
 require('./styles.scss');
 
@@ -18,7 +17,7 @@ var Home = React.createClass({
         <span className="text-emph"> films</span>,
         <span className="text-emph"> products</span>,
         <span className="text-emph"> architecture</span>, and
-        <span className="text-emph"> interiors</span>. Let us work with you to create an expression in art.
+        <span className="text-emph"> interiors</span>. Let us work with you to create an expression of art.
       </p>),
         width: 2,
         height:2,
@@ -39,7 +38,7 @@ var Home = React.createClass({
         width: 1,
         height:1,
         isFull:true},
-      {content: (<p>Deeper Left LeftSide</p>),
+      {content: (<Link to=""><img className="img-responsive" src={require('./assets/vrgame.jpg')}></img></Link>),
         width: 2,
         height:1,
         isFull:true},
@@ -51,11 +50,7 @@ var Home = React.createClass({
         width: 1,
         height:2,
         isFull:true},
-      {content: (<p>Way bottom right Column</p>),
-        width: 2,
-        height:2,
-        isFull:true},
-      {content: (<p>Deepest Left LeftSide</p>),
+      {content: (<Link to=""><img className="img-responsive" src={require('./assets/control.jpg')}></img></Link>),
         width: 2,
         height:1,
         isFull:true}
