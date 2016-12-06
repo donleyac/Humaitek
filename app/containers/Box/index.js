@@ -222,12 +222,9 @@ var Grid = React.createClass({
     let window_width = this.getWindowWidth();
 
     let new_width = (width/grid_width)*(window_width-20)+"px";
-    let new_height = 250*height+"px";
+    let new_height= ((height/grid_width)*(window_width))/1.4+"px";
     let float = "left"
 
-    if(window_width<1000){
-      new_height= (height/grid_width)*(window_width)+"px";
-    }
     if(window_width<400){
       new_width= window_width-20+"px";
       float= "none";

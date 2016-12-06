@@ -1,18 +1,1 @@
-.box {
-  outline:1px solid white;
-  background: #093377;
-}
-.grid {
-  &{
-    margin: auto;
-  }
-  p {
-    color: white;
-  }
-}
 
-@media (max-width: 400px){
-  .top{
-    display: none;
-  }
-}

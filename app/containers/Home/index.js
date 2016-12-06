@@ -1,42 +1,29 @@
 var React = require('react');
 var Grid = require('../Box/index');
+var Link = require('react-router').Link;
 require('./styles.scss');
 
 var Home = React.createClass({
   render: function(){
     var inputs = [
       //container
-      {width: 4,height:1},
-      {content: (<p>About Us</p>),
-        width: 1,
-        height:1,
-        isFull:true,
-        className:"top"},
-      {content: (<p>What's New</p>),
-        width: 1,
-        height:1,
-        isFull:true,
-        className:"top"},
-      {content: (<p>Explore</p>),
-        width: 1,
-        height:1,
-        isFull:true,
-        className:"top"},
-      {content: (<p>Contact</p>),
-        width: 1,
-        height:1,
-        isFull:true,
-        className:"top"},
-
-      //container
       {width: 1,height:3},
       {width: 2,height:3},
-      {content: (<p>Humaitek</p>),
+      {width: 2,height:3},
+      {content: (<p className="slogan">
+        <span className="text-emph">Humaitek</span> is a design and innovation studio based in <span className="text-emph">Washington, D.C.</span> We design
+        <span className="text-emph"> websites</span>,
+        <span className="text-emph"> books</span>,
+        <span className="text-emph"> posters</span>,
+        <span className="text-emph"> films</span>,
+        <span className="text-emph"> products</span>,
+        <span className="text-emph"> architecture</span>, and
+        <span className="text-emph"> interiors</span>. Let us work with you to create an expression in art.
+      </p>),
         width: 2,
         height:2,
         isFull:true},
-      {width: 2,height:3},
-      {content: (<p>Lower Humaitek</p>),
+      {content: (<Link to=""><img className="img-responsive" src={require('./assets/eventmapper.jpg')}></img></Link>),
         width: 2,
         height:1,
         isFull:true},
@@ -44,11 +31,11 @@ var Home = React.createClass({
       {width: 2,height:2},
       {width: 2,height:2},
       {width: 1,height:3},
-      {content: (<p>LeftSide</p>),
+      {content: (<Link to=""><img className="img-responsive" src={require('./assets/paramount.jpg')}></img></Link>),
         width: 1,
         height:2,
         isFull:true},
-      {content: (<p>LowerLeftSide</p>),
+      {content: (<Link to=""><img className="img-responsive" src={require('./assets/grid.jpg')}></img></Link>),
         width: 1,
         height:1,
         isFull:true},
@@ -56,11 +43,11 @@ var Home = React.createClass({
         width: 2,
         height:1,
         isFull:true},
-      {content: (<p>Under Right</p>),
+      {content: (<Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>),
         width: 1,
         height:1,
         isFull:true},
-      {content: (<p>Right Column</p>),
+      {content: (<Link to=""><img className="img-responsive" src={require('./assets/sarantis.jpg')}></img></Link>),
         width: 1,
         height:2,
         isFull:true},
@@ -75,7 +62,7 @@ var Home = React.createClass({
       ];
     return(
       <div>
-        <Grid inputs={inputs} width={4} height={6}>
+        <Grid inputs={inputs} width={4} height={4}>
         </Grid>
       </div>
       )

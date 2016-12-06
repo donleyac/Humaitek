@@ -1,5 +1,28 @@
-@media (min-width: 400px){
-  nav#myNav{
-    display: none;
+
+.grid {
+  &{
+    margin: auto;
+  }
+  p {
+    color: black;
+  }
+}
+.box {
+
+  outline:1px solid black;
+  background: #dee4ed;
+
+  img {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  .slogan {
+    padding: 20px;
+    font-size: 60px;
+    .text-emph {
+      font-weight: bold;
+      color: #3f964d;
+    }
   }
 }
