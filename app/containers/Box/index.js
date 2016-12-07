@@ -1,5 +1,4 @@
 var React = require('react');
-require('./styles.scss')
 var Box = function(props){
   let className = "box "+props.className;
 

@@ -23,7 +23,8 @@ var Home = React.createClass({
         width: 2,
         height:2,
         isFull:true},
-      {content: (<Link to=""><img className="img-responsive" src={require('./assets/eventmapper.jpg')}></img></Link>),
+      {content: (<span id="event"><Link to=""><img className="img-responsive" src={require('./assets/eventmapper.jpg')}></img></Link>
+                <div className="caption"><p>Event Mapper</p></div></span>),
         width: 2,
         height:1,
         isFull:true},
@@ -31,27 +32,33 @@ var Home = React.createClass({
       {width: 2,height:2},
       {width: 2,height:2},
       {width: 1,height:3},
-      {content: (<Link to=""><img className="img-responsive" src={require('./assets/paramount.jpg')}></img></Link>),
+      {content: (<span id="construction"><Link to=""><img className="img-responsive" src={require('./assets/paramount.jpg')}></img></Link>
+                <div className="caption"><p>Paramount Construction</p></div></span>),
         width: 1,
         height:2,
         isFull:true},
-      {content: (<Link to=""><img className="img-responsive" src={require('./assets/grid.jpg')}></img></Link>),
+      {content: (<span id="grid"><Link to=""><img className="img-responsive" src={require('./assets/grid.jpg')}></img></Link>
+                <div className="caption"><p>React Grid Layout</p></div></span>),
         width: 1,
         height:1,
         isFull:true},
-      {content: (<Link to=""><img className="img-responsive" src={require('./assets/vrgame.jpg')}></img></Link>),
+      {content: (<span id="vrgame"><Link to=""><img className="img-responsive" src={require('./assets/vrgame.jpg')}></img></Link>
+                <div className="caption"><p>Mixed Reality Horror Game</p></div></span>),
         width: 2,
         height:1,
         isFull:true},
-      {content: (<Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>),
+      {content: (<span id="metropolitian"><Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>
+                <div className="caption"><p>Metropolitian Carpet Specialists</p></div></span>),
         width: 1,
         height:1,
         isFull:true},
-      {content: (<Link to=""><img className="img-responsive" src={require('./assets/sarantis.jpg')}></img></Link>),
+      {content: (<span id="sarantis"><Link to=""><img className="img-responsive" src={require('./assets/sarantis.jpg')}></img></Link>
+                <div className="caption"><p>Sarantis Properties</p></div></span>),
         width: 1,
         height:2,
         isFull:true},
-      {content: (<Link to=""><img className="img-responsive" src={require('./assets/control.jpg')}></img></Link>),
+      {content: (<span id="control"><Link to=""><img className="img-responsive" src={require('./assets/control.jpg')}></img></Link>
+                <div className="caption"><p>Control - Book</p></div></span>),
         width: 2,
         height:1,
         isFull:true}
