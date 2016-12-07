@@ -1,6 +1,8 @@
 var React = require('react');
-//require('./styles.scss');
-function Projects(props){
+require('./styles.scss');
+
+var Projects = React.createClass({
+  render:function(){
     return(
       <div className="project">
         <section class="hero is-success is-fullheight">
@@ -17,6 +19,7 @@ function Projects(props){
       </section>
       </div>
     )
-}
+  }
+});
 
 module.exports=Projects;
