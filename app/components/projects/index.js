@@ -1,20 +1,17 @@
 var React = require('react');
-//require('./styles.scss');
+var Hero = require('re-bulma').Hero;
+var HeroBody = require('re-bulma').HeroBody;
+var Container = require('re-bulma').Container;
+var Title = require('re-bulma').Title;
+var Subtitle = require('re-bulma').Subtitle;
+
 function Projects(props){
     return(
       <div className="project">
-        <section class="hero is-success is-fullheight">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">
-                Full Height title
-              </h1>
-              <h2 class="subtitle">
-                Full Height subtitle
-              </h2>
-          </div>
-        </div>
-      </section>
+        <Hero size="isFullheight" color="isSuccess">
+          <img src="http://lorempixel.com/400/200" />
+
+        </Hero>
       </div>
     )
 }

@@ -13,6 +13,7 @@
     "antd": "^2.5.1",
     "bulma": "^0.2.3",
     "classnames": "^2.2.5",
+    "re-bulma": "^0.2.3",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.3.2",
