@@ -1,7 +1,17 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var Grid = require('../Box/index');
+var Lightbox = require('../../components/lightbox/index');
 require('./styles.scss');
+
+//Props -> images, className, titles, captions
+var GridLightbox = function(props){
+  return(
+    <Lightbox className="lightbox" attr={props.attr} >
+      <img className="img-responsive" src={props.thumbNail}/>
+    </Lightbox>
+  )
+}
 
 var Home = React.createClass({
   render: function(){
@@ -22,7 +32,17 @@ var Home = React.createClass({
         width: 2,
         height:2,
         isFull:true},
-      {content: (<span id="event"><Link to=""><img className="img-responsive" src={require('./assets/eventmapper.jpg')}></img></Link>
+      {content: (<span id="event"><Link to="">
+        <GridLightbox thumbNail={require('./assets/eventmapper.jpg')}
+          attr={{
+            titles: ['','',''],
+            images: [
+              "http://lorempixel.com/500/500",
+              "http://placehold.it/500x500",
+              "http://lorempixel.com/500/500"],
+            captions: ['','','']
+          }}>
+        </GridLightbox></Link>
                 <div className="caption"><p>Event Mapper</p></div></span>),
         width: 2,
         height:1,

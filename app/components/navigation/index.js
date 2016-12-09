@@ -37,7 +37,7 @@ var Navigation = React.createClass({
               </LinkContainer>
               <LinkContainer to="contact"><div className="link line-hover"><p>Contact</p></div></LinkContainer>
             </div>
-        </Affix>
+          </Affix>
           {this.props.children}
         </div>
     )
