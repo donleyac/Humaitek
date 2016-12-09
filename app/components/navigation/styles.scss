@@ -1,18 +1,16 @@
-#myNav{
+#navbar{
   & {
     width: 100%;
-    background: white;
-    font-size: 14pt;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
-    font-weight: bold;
-    border: none;
+    display: flex;
+    justify-content: center;
   }
   .line-hover{
-    &  > a {
+    &  > p {
       position: relative;
     }
-    & > a:before {
+    & > p:before {
       content: "";
       position: absolute;
       width: 100%;
@@ -26,115 +24,71 @@
       -webkit-transition: all 0.3s ease-in-out 0s;
       transition: all 0.3s ease-in-out 0s;
     }
-    & > a:hover:before{
+    & > p:hover:before{
       visibility: visible;
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
     }
   }
-  //brand
-  .container {
-    width: 100%;
-  }
-  ul{
-    width: 100%;
-    .menu {
-      text-align: center;
-      width: 20%;
-      a {
-        margin-top: 15px;
-        padding-top: 70px;
-        padding-bottom:60px;
-        color:#3f964d;
-        font-size: 30px;
-      }
-      a:hover {
-        text-decoration: none;
-        color:#404040;
-        background-color: #e7e7e7;
-      }
-    }
-  }
-.logo-menu {
-  width: 20%;
-  .logo{
-    width: 100%;
-    height: 100%;
-    position: relative;
+  .link {
+    text-align: center;
+    width: 20%;
     p {
-      font-size: 50px;
-      vertical-align: middle;
-      position: absolute;
-      left: 15%;
-      top: 40%;
-      color: black;
+      margin-top: 20px;
+      padding-top: 50px;
+      padding-bottom:58px;
+      color:#3f964d;
+      font-size: 30px;
     }
-    .shape {
-        fill: transparent;
-        stroke: black;
+    p:hover {
+      cursor: pointer;
+      text-decoration: none;
+      color:#404040;
+      background-color: #e7e7e7;
     }
   }
-
-}
-.logo-menu:hover{
-  background: #093377;
-  p{
-    color: white;
-  }
-  .shape {
-    stroke: white;
-  }
-}
-.ready .shape {
-    -webkit-animation: 3s draw linear forwards;
-    animation: 3s draw linear forwards;
-}
-@keyframes draw {
-    0% {
-        stroke-dasharray: 0 2500;
-        stroke-dashoffset: 0;
-        stroke-width: 20px;
+  .logo-container{
+    &{
+      min-width: 300px;
+      fill: transparent;
+      stroke: black;
+      -webkit-animation: 3s draw linear forwards;
+      animation: 3s draw linear forwards;
+      p{
+        color: black;
+      }
     }
-    100% {
-        stroke-dasharray: 4000;
-        stroke-dashoffset: 0;
-        stroke-width: 20px;
+    &:hover{
+      cursor: pointer;
+      background: #093377;
+      stroke: white;
+      p{
+        color: white;
+      }
     }
-}
-.unready .shape {
-    -webkit-animation: 1s undraw linear forwards;
-    animation: 1s undraw linear forwards;
-}
-@keyframes undraw {
-    0% {
-        stroke-dasharray: 2500;
-        stroke-dashoffset: 0;
-        stroke-width: 20px;
+    .logo {
+      & {
+        margin: 20px;
+        position: relative;
+      }
+      p {
+        font-size: 50px;
+        position: absolute;
+        left: 15%;
+        top: 30%;
+      }
     }
-    100% {
-        stroke-dasharray: 0 2000;
-        stroke-dashoffset: 0;
-        stroke-width: 20px;
-    }
-}
-
-//menu-item
-.navbar-nav > li > .dropdown-menu {
-  li {
-    width: 100%;
   }
-  a {
-    width: 100%;
-    color: black;
+  @keyframes draw {
+      0% {
+          stroke-dasharray: 0 2500;
+          stroke-dashoffset: 0;
+          stroke-width: 20px;
+      }
+      100% {
+          stroke-dasharray: 4000;
+          stroke-dashoffset: 0;
+          stroke-width: 20px;
+      }
   }
-  a:hover{
-    background: #9ED4FF;
-  }
-}
-button.navbar-toggle {
-    margin: 50px;
-    border: #2068A2;
-    border-style: solid;
-    border-width: 2px;
-}
 }

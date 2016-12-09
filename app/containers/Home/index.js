@@ -6,7 +6,6 @@ require('./styles.scss');
 var Home = React.createClass({
   render: function(){
     var inputs = [
-      //container
       {width: 1,height:3},
       {width: 2,height:3},
       {width: 2,height:3},
@@ -48,7 +47,7 @@ var Home = React.createClass({
         height:1,
         isFull:true},
       {content: (<span id="metropolitian"><Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>
-                <div className="caption"><p>Metropolitian Carpet Specialists</p></div></span>),
+        <div className="caption"><p>Metropolitian Carpet</p></div></span>),
         width: 1,
         height:1,
         isFull:true},
