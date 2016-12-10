@@ -29,9 +29,7 @@ var Home = React.createClass({
         <span className="text-emph"> architecture</span>, and
         <span className="text-emph"> interiors</span>. Let us work with you to create an expression of art.
       </p>),
-        width: 2,
-        height:2,
-        isFull:true},
+        width: 2, height:2, isFull:true},
       {content: (<span id="event"><Link to="">
         <GridLightbox thumbNail={require('./assets/eventmapper.jpg')}
           attr={{
@@ -41,12 +39,9 @@ var Home = React.createClass({
               "http://placehold.it/500x500",
               "http://lorempixel.com/500/500"],
             captions: ['','','']
-          }}>
-        </GridLightbox></Link>
-                <div className="caption"><p>Event Mapper</p></div></span>),
-        width: 2,
-        height:1,
-        isFull:true},
+          }} /></Link>
+        <div className="caption"><p>Event Mapper</p></div></span>),
+        width: 2, height:1, isFull:true},
       {width: 1,height:3},
       {width: 2,height:2},
       {width: 2,height:2},
@@ -71,7 +66,17 @@ var Home = React.createClass({
         width: 1,
         height:1,
         isFull:true},
-      {content: (<span id="sarantis"><Link to=""><img className="img-responsive" src={require('./assets/sarantis.jpg')}></img></Link>
+      {content: (<span id="sarantis"><Link to="">
+        <GridLightbox thumbNail={require('./assets/sarantis.jpg')}
+          attr={{
+            titles: ['','',''],
+            images: [
+              "http://lorempixel.com/500/500",
+              "http://placehold.it/500x500",
+              "http://lorempixel.com/500/500"],
+            captions: ['','','']
+          }} />
+        </Link>
                 <div className="caption"><p>Sarantis Properties</p></div></span>),
         width: 1,
         height:2,
@@ -83,7 +88,7 @@ var Home = React.createClass({
         isFull:true}
       ];
     return(
-      <div>
+      <div className="home">
         <Grid inputs={inputs} width={4} height={4}>
         </Grid>
       </div>
