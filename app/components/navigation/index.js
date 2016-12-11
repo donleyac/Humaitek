@@ -4,7 +4,7 @@ var Affix = require('antd').Affix;
 
 require('./styles.scss')
 
-
+//TODO Redo nav, affix and resize dont seem to be working randomly
 var Navigation = React.createClass({
     render(){
       window.addEventListener('scroll', function(e){

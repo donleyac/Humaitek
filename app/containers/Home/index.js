@@ -30,7 +30,7 @@ var Home = React.createClass({
         <span className="text-emph"> interiors</span>. Let us work with you to create an expression of art.
       </p>),
         width: 2, height:2, isFull:true},
-      {content: (<span id="event"><Link to="">
+      {content: (<span id="event">
         <GridLightbox thumbNail={require('./assets/eventmapper.jpg')}
           attr={{
             titles: ['','',''],
@@ -39,45 +39,45 @@ var Home = React.createClass({
               "http://placehold.it/500x500",
               "http://lorempixel.com/500/500"],
             captions: ['','','']
-          }} /></Link>
+          }} />
         <div className="caption"><p>Event Mapper</p></div></span>),
         width: 2, height:1, isFull:true},
       {width: 1,height:3},
       {width: 2,height:2},
       {width: 2,height:2},
       {width: 1,height:3},
-      {content: (<span id="construction"><Link to=""><img className="img-responsive" src={require('./assets/paramount.jpg')}></img></Link>
-                <div className="caption"><p>Paramount Construction</p></div></span>),
-        width: 1,
-        height:2,
-        isFull:true},
-      {content: (<span id="grid"><Link to=""><img className="img-responsive" src={require('./assets/grid.jpg')}></img></Link>
-                <div className="caption"><p>React Grid Layout</p></div></span>),
-        width: 1,
-        height:1,
-        isFull:true},
-      {content: (<span id="vrgame"><Link to=""><img className="img-responsive" src={require('./assets/vrgame.jpg')}></img></Link>
-                <div className="caption"><p>Mixed Reality Horror Game</p></div></span>),
-        width: 2,
-        height:1,
-        isFull:true},
-      {content: (<span id="metropolitian"><Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>
+      {content: (<span id="construction">
+        <Link to=""><img className="img-responsive" src={require('./assets/paramount.jpg')}></img></Link>
+        <div className="caption"><p>Paramount Construction</p></div></span>),
+        width: 1, height:2, isFull:true},
+
+      {content: (<span id="grid">
+        <Link to=""><img className="img-responsive" src={require('./assets/grid.jpg')}></img></Link>
+        <div className="caption"><p>React Grid Layout</p></div></span>),
+        width: 1,height:1,isFull:true},
+
+      {content: (<span id="vrgame">
+        <Link to=""><img className="img-responsive" src={require('./assets/vrgame.jpg')}></img></Link>
+        <div className="caption"><p>Mixed Reality Horror Game</p></div></span>),
+        width: 2,height:1,isFull:true},
+
+      {content: (<span id="metropolitian">
+        <Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>
         <div className="caption"><p>Metropolitian Carpet</p></div></span>),
-        width: 1,
-        height:1,
-        isFull:true},
-      {content: (<span id="sarantis"><Link to="">
+        width: 1,height:1,isFull:true},
+      {content: (<span id="sarantis">
         <GridLightbox thumbNail={require('./assets/sarantis.jpg')}
           attr={{
-            titles: ['','',''],
+            titles: [(<span>Sarantis Properties Headquarters <Link to="/sarantis">View full article!</Link></span>),
+                      (<span>Sarantis Properties Headquarters <Link to="/sarantis">View full article!</Link></span>),
+                      (<span>Sarantis Properties Headquarters <Link to="/sarantis">View full article!</Link></span>)],
             images: [
               "http://lorempixel.com/500/500",
               "http://placehold.it/500x500",
               "http://lorempixel.com/500/500"],
             captions: ['','','']
           }} />
-        </Link>
-                <div className="caption"><p>Sarantis Properties</p></div></span>),
+        <div className="caption"><p>Sarantis Properties</p></div></span>),
         width: 1,
         height:2,
         isFull:true},

@@ -1,7 +1,10 @@
+
 .ant-affix {
   z-index: 9999;
   background: white;
+  width: 100% !important;
 }
+
 #navbar{
   & {
     width: 100%;
