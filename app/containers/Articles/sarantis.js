@@ -17,9 +17,9 @@ var SarantisProperties = function(props) {
       </div>
       <p>
         Sarantis Properties is a property management company that invests in
-        residential and commercial developments in the DMV area. The most important
-        content that we should display is the properties, which take center stage
-        in our design as an autoscrolling carousel. The flow of images is
+        residential and commercial developments. For this client, the most important
+        content to display are the properties. We present them at center stage
+        through the implementation of a large autoscrolling carousel. The flow of images is
         intentional. The images in close succession follow the path of a particular property,
         from outside to inside. In addition, if you view the carousel within a page
         categorized as residential or commercial the specific images are curated accordingly.
@@ -30,9 +30,9 @@ var SarantisProperties = function(props) {
       <img src={require('./assets/sarantis/carousel.png')}/>
       <p>
         Most of the pages in the residential and commercials tabs follow a basic template for consistency.
-        Property image on the left with address and specific information on the right.
+        Property images on the left with address and specific information to the right.
         The right pane may also contain external links to a listing so that the user
-        can view the images specific to that property tied to a floorplan.
+        can view more detailed images attached to a floorplan.
       </p>
       <img src={require('./assets/sarantis/commercial.png')}/>
       <p>
@@ -41,8 +41,8 @@ var SarantisProperties = function(props) {
         function to break up the required text descriptions.
       </p>
       <p>
-        For now the website is living, updated when new information on certain properties
-        are revealed. The layout may change as new media becomes available or
+        For now the website is living and updated when new information on certain properties
+        is revealed. The layout may change as new media becomes available or
         as the site attempts to capture a different aspect of it's clientele.
       </p>
 

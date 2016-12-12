@@ -2,6 +2,7 @@ var React = require('react');
 var Link = require('react-router').Link;
 var Grid = require('../Box/index');
 var Lightbox = require('../../components/lightbox/index');
+var Button = require('antd').Button;
 require('./styles.scss');
 
 //Props -> images, className, titles, captions
@@ -68,14 +69,14 @@ var Home = React.createClass({
       {content: (<span id="sarantis">
         <GridLightbox thumbNail={require('./assets/sarantis.jpg')}
           attr={{
-            titles: [(<span>Sarantis Properties Headquarters <Link to="/sarantis">View full article!</Link></span>),
-                      (<span>Sarantis Properties Headquarters <Link to="/sarantis">View full article!</Link></span>),
-                      (<span>Sarantis Properties Headquarters <Link to="/sarantis">View full article!</Link></span>)],
+            titles: [(<span><span>View the properties on a moving carousel  </span>
+                      <Link to="/sarantis"><Button>View the full article!</Button></Link></span>),
+                      (<span><span>Properties and Details </span>
+                      <Link to="/sarantis"><Button>View the full article!</Button></Link></span>)],
             images: [
-              "http://lorempixel.com/500/500",
-              "http://placehold.it/500x500",
-              "http://lorempixel.com/500/500"],
-            captions: ['','','']
+              require('../Articles/assets/sarantis/carousel.png'),
+              require('../Articles/assets/sarantis/commercial.png')],
+            captions: ['','']
           }} />
         <div className="caption"><p>Sarantis Properties</p></div></span>),
         width: 1,
