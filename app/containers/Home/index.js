@@ -34,11 +34,12 @@ var Home = React.createClass({
       {content: (<span id="event">
         <GridLightbox thumbNail={require('./assets/eventmapper.jpg')}
           attr={{
-            titles: ['','',''],
+            titles: ['EventMapper Homepage','Upcoming and Trending Events','Create an Event', 'Find your Event'],
             images: [
-              "http://lorempixel.com/500/500",
-              "http://placehold.it/500x500",
-              "http://lorempixel.com/500/500"],
+              require('../Articles/assets/eventmapper/Home.png'),
+              require('../Articles/assets/eventmapper/home-dashboard.png'),
+              require('../Articles/assets/eventmapper/create-event.png'),
+              require('../Articles/assets/eventmapper/mapview-eventinfo.png')],
             captions: ['','','']
           }} />
         <div className="caption"><p>Event Mapper</p></div></span>),
@@ -47,8 +48,25 @@ var Home = React.createClass({
       {width: 2,height:2},
       {width: 2,height:2},
       {width: 1,height:3},
-      {content: (<span id="construction">
-        <Link to=""><img className="img-responsive" src={require('./assets/paramount.jpg')}></img></Link>
+
+      {content: (<span id="paramount">
+        <GridLightbox thumbNail={require('./assets/paramount.jpg')}
+          attr={{
+            titles: [(<span><span>View the renovations on a moving carousel  </span>
+                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>),
+                      (<span><span>What Services do they offer? </span>
+                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>),
+                      (<span><span>More in depth projects </span>
+                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>),
+                      (<span><span>The people behind the company </span>
+                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>)],
+            images: [
+              require('../Articles/assets/paramount/carousel.png'),
+              require('../Articles/assets/paramount/turnkey.png'),
+              require('../Articles/assets/paramount/case_study.png'),
+              require('../Articles/assets/paramount/leadership.png')],
+            captions: ['','','','']
+          }} />
         <div className="caption"><p>Paramount Construction</p></div></span>),
         width: 1, height:2, isFull:true},
 

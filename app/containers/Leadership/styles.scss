@@ -1,0 +1,61 @@
+.leadership {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .flip-container {
+	   perspective: 320px;
+    .ant-card-body{
+      outline: 2px #e7e7e7 solid;
+      transition: 0.6s;
+      transform-style: preserve-3d;
+
+      .front, .back {
+        backface-visibility: hidden;
+        width: 320px;
+        height: 480px;
+      }
+      .front{
+        z-index: 2;
+	      /* for firefox 31 */
+	      transform: rotateY(0deg);
+        .profile-image {
+          display: block;
+        }
+        .details {
+          padding: 10px 16px;
+          text-align: center;
+          p{
+            color: #999;
+          }
+        }
+      }
+
+      .back {
+        position: absolute;
+        top: 0;
+        transform: rotateY(180deg);
+        text-align: center;
+        .small-image {
+          padding-top: 20px;
+          display: block;
+          width: 60%;
+          margin: auto;
+        }
+        .details {
+          padding: 10px;
+          font-size: 20px;
+          a {
+            display: inline-block;
+            padding: 20px;
+          }
+        }
+      }
+    }
+    &:hover .ant-card-body{
+      transform: rotateY(180deg);
+    }
+
+  }
+}

@@ -9,7 +9,7 @@ var Navigation = React.createClass({
     render(){
       window.addEventListener('scroll', function(e){
         let distanceY = window.pageYOffset || document.documentElement.scrollTop;
-        let shrinkOn = 100;
+        let shrinkOn = 90;
         let navbar = document.getElementById("navbar");
         if (distanceY > shrinkOn) {
           navbar.classList.add("smaller")
@@ -24,7 +24,7 @@ var Navigation = React.createClass({
         <div className="wrapper">
           <Affix>
             <div id="navbar">
-              <LinkContainer to="new"><div className="link line-hover"><p>Explore</p></div></LinkContainer>
+              <LinkContainer to="leadership"><div className="link line-hover"><p>Explore</p></div></LinkContainer>
               <LinkContainer to="/">
                 <div className="logo-container">
                   <div className="logo">
