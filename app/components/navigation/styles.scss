@@ -19,6 +19,9 @@
     -o-transition: padding 0.3s;
     transition: padding 0.3s;
   }
+  .icons {
+    display: none;
+  }
   .line-hover{
     &  > p {
       position: relative;
@@ -88,12 +91,16 @@
         margin: 20px;
         position: relative;
         height: 155px;
-
         -webkit-transition: height 0.3s;
         -moz-transition: height 0.3s;
         -ms-transition: height 0.3s;
         -o-transition: height 0.3s;
         transition: height 0.3s;
+      }
+      .icons {
+        position: absolute;
+        left: 35%;
+        top: 30%;
       }
       p {
         font-size: 50px;
@@ -137,6 +144,61 @@
         p {
           top: 17%;
         }
+      }
+    }
+  }
+  @media(max-width:600px){
+    p {
+      display: none;
+    }
+    .icons {
+      display: block;
+      width: 50px;
+    }
+    .inverse {
+      display: none;
+    }
+    .logo-container{
+      min-width: 150px;
+      width: 200px;
+      &:hover {
+        .normal {
+          display: none;
+        }
+        .inverse {
+          display: block;
+        }
+      }
+    }
+    &.smaller {
+      .link{
+        .icons{
+          margin: 30px 0px 20px 0px;
+
+          -webkit-transition: margin 0.3s;
+          -moz-transition: margin 0.3s;
+          -ms-transition: margin 0.3s;
+          -o-transition: margin 0.3s;
+          transition: margin 0.3s;
+        }
+      }
+      padding: 5px 0px 5px 0px;
+      .logo-container {
+        margin-left: 0px;
+        margin-right: 0px;
+        height: 110px;
+        display: block;
+      }
+    }
+    .link {
+      width: auto;
+      .icons{
+        margin: 70px 0px 58px 0px;
+      }
+      .icons:hover{
+        cursor: pointer;
+        background: #e7e7e7;
+        outline: 1px solid #878787;
       }
     }
   }
