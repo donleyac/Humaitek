@@ -11,7 +11,6 @@ var Paramount = require('../containers/Articles/paramount');
 var Leadership = require('../containers/Leadership/index');
 var Contact = require('../containers/Contact/index');
 
-//TODO add nav bar, make it hidden on home, unless small screen size.
 var routes = (
   <Router history={hashHistory}>
     <Route path ='/' component = {Navigation}>

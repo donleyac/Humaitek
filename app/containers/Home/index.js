@@ -31,7 +31,7 @@ var Home = React.createClass({
         <span className="text-emph"> interiors</span>. Let us work with you to create an expression of art.
       </p>),
         width: 2, height:2, isFull:true},
-      {content: (<span id="event">
+      {content: (<span id="event" className="captioned">
         <GridLightbox thumbNail={require('./assets/eventmapper.jpg')}
           attr={{
             titles: ['EventMapper Homepage','Upcoming and Trending Events','Create an Event', 'Find your Event'],
@@ -49,17 +49,13 @@ var Home = React.createClass({
       {width: 2,height:2},
       {width: 1,height:3},
 
-      {content: (<span id="paramount">
+      {content: (<span id="paramount"  className="captioned">
         <GridLightbox thumbNail={require('./assets/paramount.jpg')}
           attr={{
-            titles: [(<span><span>View the renovations on a moving carousel  </span>
-                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>),
-                      (<span><span>What Services do they offer? </span>
-                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>),
-                      (<span><span>More in depth projects </span>
-                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>),
-                      (<span><span>The people behind the company </span>
-                      <Link to="/paramount"><Button>View the full article!</Button></Link></span>)],
+            titles: [(<Link to="/paramount"><Button>View the full article!</Button></Link>),
+                      (<Link to="/paramount"><Button>View the full article!</Button></Link>),
+                      (<Link to="/paramount"><Button>View the full article!</Button></Link>),
+                      (<Link to="/paramount"><Button>View the full article!</Button></Link>)],
             images: [
               require('../Articles/assets/paramount/carousel.png'),
               require('../Articles/assets/paramount/turnkey.png'),
@@ -70,27 +66,25 @@ var Home = React.createClass({
         <div className="caption"><p>Paramount Construction</p></div></span>),
         width: 1, height:2, isFull:true},
 
-      {content: (<span id="grid">
+      {content: (<span id="grid"  className="captioned">
         <Link to=""><img className="img-responsive" src={require('./assets/grid.jpg')}></img></Link>
         <div className="caption"><p>React Grid Layout</p></div></span>),
         width: 1,height:1,isFull:true},
 
-      {content: (<span id="vrgame">
+      {content: (<span id="vrgame"  className="captioned">
         <Link to=""><img className="img-responsive" src={require('./assets/vrgame.jpg')}></img></Link>
         <div className="caption"><p>Mixed Reality Horror Game</p></div></span>),
         width: 2,height:1,isFull:true},
 
-      {content: (<span id="metropolitian">
+      {content: (<span id="metropolitian"  className="captioned">
         <Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>
         <div className="caption"><p>Metropolitian Carpet</p></div></span>),
         width: 1,height:1,isFull:true},
-      {content: (<span id="sarantis">
+      {content: (<span id="sarantis"  className="captioned">
         <GridLightbox thumbNail={require('./assets/sarantis.jpg')}
           attr={{
-            titles: [(<span><span>View the properties on a moving carousel  </span>
-                      <Link to="/sarantis"><Button>View the full article!</Button></Link></span>),
-                      (<span><span>Properties and Details </span>
-                      <Link to="/sarantis"><Button>View the full article!</Button></Link></span>)],
+            titles: [(<Link to="/sarantis"><Button>View the full article!</Button></Link>),
+                      (<Link to="/sarantis"><Button>View the full article!</Button></Link>)],
             images: [
               require('../Articles/assets/sarantis/carousel.png'),
               require('../Articles/assets/sarantis/commercial.png')],
@@ -100,7 +94,7 @@ var Home = React.createClass({
         width: 1,
         height:2,
         isFull:true},
-      {content: (<span id="control"><Link to=""><img className="img-responsive" src={require('./assets/control.jpg')}></img></Link>
+      {content: (<span id="control"  className="captioned"><Link to=""><img className="img-responsive" src={require('./assets/control.jpg')}></img></Link>
                 <div className="caption"><p>Control - Book</p></div></span>),
         width: 2,
         height:1,

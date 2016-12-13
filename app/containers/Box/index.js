@@ -224,7 +224,7 @@ var Grid = React.createClass({
     let new_height= ((height/grid_width)*(window_width))/1.4+"px";
     let float = "left"
 
-    if(window_width<400){
+    if(window_width<500){
       new_width= window_width-20+"px";
       float= "none";
       new_height=200+"px";
@@ -235,7 +235,7 @@ var Grid = React.createClass({
     }
 
 
-    console.log(new_width);
+    //console.log(new_width);
     let style = {
       width: new_width,
       height: new_height,
@@ -245,7 +245,7 @@ var Grid = React.createClass({
   },
   render(){
     var grid = this.theRenderMachine(this.state.context.grid);
-    console.log(grid);
+    //console.log(grid);
     let style = this.getStyle(this.props.width, this.props.height,true);
     let className = "grid box";
     return(

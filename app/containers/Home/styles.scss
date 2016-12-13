@@ -49,42 +49,33 @@
     }
   }
 
+  .captioned:hover {
+    .caption {
+      height: 3.8vw;
+    }
+  }
 
-  $caption-height: 10%;
-  //TODO figure how to not make these id dependent
-  #event:hover{
+@media(max-width: 500px){
+  .box{
+    .slogan {
+      padding: 3vw;
+      font-size: 4.6vw;
+    }
+    img {
+      min-height: 200px;
+    }
     .caption {
-      height: $caption-height*2;
+      p{
+        font-size: 4vw;
+      }
     }
   }
-  #grid:hover{
+  .captioned:hover {
     .caption {
-      height: $caption-height*2;
+      height: 7vw;
     }
   }
-  #metropolitian:hover{
-    .caption {
-      height: $caption-height*2;
-    }
-  }
-  #vrgame:hover{
-    .caption {
-      height: $caption-height*2;
-    }
-  }
-  #control:hover{
-    .caption {
-      height: $caption-height*2;
-    }
-  }
-  #sarantis:hover{
-    .caption {
-      height: $caption-height;
-    }
-  }
-  #paramount:hover{
-    .caption {
-      height: $caption-height;
-    }
-  }
+}
+
+
 }
