@@ -10,6 +10,7 @@ var SarantisProperties = require('../containers/Articles/sarantis');
 var Paramount = require('../containers/Articles/paramount');
 var Leadership = require('../containers/Leadership/index');
 var Contact = require('../containers/Contact/index');
+var Explore = require('../containers/Explore/index');
 
 var routes = (
   <Router history={hashHistory}>
@@ -19,6 +20,7 @@ var routes = (
       <Route path ='paramount' component = {Paramount} />
       <Route path ='leadership' component = {Leadership} />
       <Route path ='contact' component = {Contact} />
+      <Route path ='explore(/:name)' component = {Explore} />
     </Route>
   </Router>
 );

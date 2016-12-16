@@ -163,7 +163,7 @@ var Grid = React.createClass({
     },this)
   },
   theRenderMachine(grid){
-    console.log(grid);
+    //console.log(grid);
     return grid.map(function(child){
       if(Array.isArray(child)){
         return this.theRenderMachine(child);
