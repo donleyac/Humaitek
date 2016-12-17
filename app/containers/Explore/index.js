@@ -54,7 +54,7 @@ var Explore = React.createClass({
     console.log("Page Route: " +page.route);
     return (
     <div>
-      <Hero color="isPrimary">
+      <Hero color="isLight">
       <HeroBody>
         <button onClick={() => this.handleSlideClick(-1)}><img src={require('./assets/left_arrow.png')} /></button>
         <Container hasTextCentered>
@@ -63,6 +63,7 @@ var Explore = React.createClass({
         <button onClick={() => this.handleSlideClick(1)}><img src={require('./assets/right_arrow.png')} /></button>
       </HeroBody>
     </Hero>
+      <div className="spacing"></div>
       <page.route />
     </div>)
   },

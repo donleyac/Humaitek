@@ -23,7 +23,7 @@ var Navigation = React.createClass({
         <div className="wrapper">
           <Affix>
             <div id="navbar">
-              <LinkContainer to="leadership"><div className="link line-hover">
+              <LinkContainer to="explore"><div className="link line-hover">
                 <p>Explore</p>
                 <img className="icons" src={require('./assets/explore.png')}></img>
               </div></LinkContainer>

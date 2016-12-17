@@ -18,7 +18,6 @@ var routes = (
       <IndexRoute component={Home} />
       <Route path ='sarantis' component = {SarantisProperties} />
       <Route path ='paramount' component = {Paramount} />
-      <Route path ='leadership' component = {Leadership} />
       <Route path ='contact' component = {Contact} />
       <Route path ='explore(/:name)' component = {Explore} />
     </Route>
