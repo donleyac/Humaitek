@@ -6,25 +6,12 @@ require('./styles.scss')
 
 var Navigation = React.createClass({
     render(){
-      window.addEventListener('scroll', function(e){
-        let distanceY = window.pageYOffset || document.documentElement.scrollTop;
-        let shrinkOn = 90;
-        let navbar = document.getElementById("navbar");
-        if (distanceY > shrinkOn) {
-          navbar.classList.add("smaller")
-        }
-        else {
-          if (navbar.classList.contains("smaller")) {
-            navbar.classList.remove("smaller");
-          }
-        }
-      });
       return (
         <div className="wrapper">
           <div id="navbar">
             <LinkContainer to="explore"><div className="link line-hover">
               <p>Explore</p>
-              <img className="icons" src={require('./assets/explore.png')}></img>
+              <i className="material-icons">explore</i>
             </div></LinkContainer>
             <LinkContainer to="/">
               <div className="logo-container">
@@ -33,14 +20,13 @@ var Navigation = React.createClass({
                     <rect className="shape" height="100%" width="100%" />
                   </svg>
                   <p>Humaitek</p>
-                  <img className="normal icons" src={require('./assets/home_black.png')}></img>
-                  <img className="inverse icons" src={require('./assets/home_white.png')}></img>
+                  <i className="material-icons">home</i>
                 </div>
               </div>
             </LinkContainer>
             <LinkContainer to="contact"><div className="link line-hover">
               <p>Contact</p>
-              <img className="icons" src={require('./assets/feedback.png')}></img>
+              <i className="material-icons">feedback</i>
             </div></LinkContainer>
           </div>
           {this.props.children}

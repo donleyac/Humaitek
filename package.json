@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^2.5.1",
+    "material-design-icons": "^3.0.1",
     "re-bulma": "^0.2.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
