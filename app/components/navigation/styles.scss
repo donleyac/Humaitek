@@ -128,6 +128,7 @@
         }
     }
   }
+  /*
   &.smaller{
     padding: 5px 0px 5px 0px;
     .link{
@@ -147,6 +148,7 @@
       }
     }
   }
+  */
   @media(max-width:600px){
     p {
       display: none;
@@ -170,6 +172,7 @@
         }
       }
     }
+    /*
     &.smaller {
       .link{
         .icons{
@@ -190,6 +193,7 @@
         display: block;
       }
     }
+    */
     .link {
       width: auto;
       .icons{
