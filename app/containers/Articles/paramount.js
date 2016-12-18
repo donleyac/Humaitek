@@ -9,8 +9,8 @@ var Paramount = function(props) {
       <div className="overview">
         <div className="involvement">
           Involvement:
-          <span>Design - Half</span>
-          <span>Development - In Progress</span>
+          <span>Design - Half </span>
+          <span>Development - In Progress </span>
           <a className="website-url" href="http://test.paramountserv.com">View Client Website</a>
         </div>
 

@@ -9,8 +9,8 @@ var SarantisProperties = function(props) {
       <div className="overview">
         <div className="involvement">
           Involvement:
-          <span>Design - Minor</span>
-          <span>Development - Full</span>
+          <span>Design - Minor </span>
+          <span>Development - Full </span>
           <a className="website-url" href="http://sarantisproperties.com/">View Client Website</a>
         </div>
 
