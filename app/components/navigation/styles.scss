@@ -67,9 +67,11 @@
       stroke: black;
       -webkit-animation: 3s draw linear forwards;
       animation: 3s draw linear forwards;
-      p{
-        color: black;
-      }
+     -moz-animation: 3s draw linear forwards;
+     -o-animation: 3s draw linear forwards;
+     p {
+      color: black;
+     }
     }
     &:hover{
       cursor: pointer;
@@ -84,11 +86,6 @@
         margin: 20px;
         position: relative;
         height: 155px;
-        -webkit-transition: height 0.3s;
-        -moz-transition: height 0.3s;
-        -ms-transition: height 0.3s;
-        -o-transition: height 0.3s;
-        transition: height 0.3s;
       }
       .material-icons {
         position: absolute;
@@ -97,28 +94,25 @@
         color: black;
       }
       p {
-        font-size: 50px;
+        text-transform: uppercase;
+        font-family: 'Advent Pro', sans-serif;
+        font-weight: 600;
+        font-size: 52px;
         position: absolute;
         left: 15%;
-        top: 30%;
-
-        -webkit-transition: top 0.3s;
-        -moz-transition: top 0.3s;
-        -ms-transition: top 0.3s;
-        -o-transition: top 0.3s;
-        transition: top 0.3s;
+        top: 25%;
       }
     }
     @keyframes draw {
         0% {
             stroke-dasharray: 0 2500;
             stroke-dashoffset: 0;
-            stroke-width: 20px;
+            stroke-width: 10px;
         }
         100% {
             stroke-dasharray: 4000;
             stroke-dashoffset: 0;
-            stroke-width: 20px;
+            stroke-width: 10px;
         }
     }
   }

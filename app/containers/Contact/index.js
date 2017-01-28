@@ -60,13 +60,9 @@ var Contact = React.createClass({
       </div>
       <div className="col-sm-5 col-sm-offset-right-1">
         <ul>
-          <li>Paramount Construction Services</li>
-          <li>21441 Pacific Blvd., Suite 230
-            Sterling, VA 20166
-          </li>
-          <li>(703) 964-3230 (Office)</li>
-          <li>(866) 585-0992 (Toll Free)</li>
-          <li>info@paramountserv.com</li>
+          <li>Feel free to contact</li>
+          <li>(571) 839-6592</li>
+          <li>donleyac@gmail.com</li>
         </ul>
       </div>
     </div>
