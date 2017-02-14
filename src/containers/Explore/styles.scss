@@ -1,13 +1,13 @@
+@import '../../_colors.scss';
 .explore {
   button {
-    background-color: #4CAF50;
     border: none;
     padding: 15px 32px;
     text-align: center;
+    &:active {
+      border: $color1-outline;
+    }
   }
- button:hover{
-   background-color: #1c7c33;
- }
  .spacing {
    height: 40px;
  }

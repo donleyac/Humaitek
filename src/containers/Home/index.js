@@ -5,12 +5,38 @@ import Lightbox from '../../components/lightbox/index';
 import {Button} from 'antd';
 import './styles.scss';
 
-//Props -> images, className, titles, captions
+
+var BoxContainer = function (props){
+  var boxClass = "";
+  boxClass+=props.isCaptioned?" captioned":"";
+  boxClass+=props.containsImg?" imaged":"";
+  return (
+    <span className={boxClass}>
+      {props.children}
+    </span>
+  )
+}
+var BackgroundImg = function (props){
+  let bk_div={ backgroundImage: 'url(' + props.image + ')'};
+  return (
+    <div className="bk_img" style={bk_div}/>
+  )
+}
+var Caption = function (props){
+  return(
+    <div className="caption"><p>{props.caption}</p></div>
+  )
+}
 var GridLightbox = function(props){
   return(
     <Lightbox className="lightbox" attr={props.attr} >
-      <img className="img-responsive" src={props.thumbNail}/>
+      {props.children}
     </Lightbox>
+  )
+}
+var ViewArticle = function(props){
+  return (
+    <Link to={props.to}><Button>View the full article!</Button></Link>
   )
 }
 
@@ -19,86 +45,92 @@ var Home = React.createClass({
     var inputs = [
       {width: 1,height:3},
       {width: 2,height:3},
-      {width: 2,height:3},
-      {content: (<p className="slogan">
-        <span className="text-emph">Humaitek</span> is a design and innovation studio based in <span className="text-emph">Washington, D.C.</span> We design
-        <span className="text-emph"> websites</span>,
-        <span className="text-emph"> books</span>,
-        <span className="text-emph"> posters</span>,
-        <span className="text-emph"> films</span>,
-        <span className="text-emph"> products</span>,
-        <span className="text-emph"> architecture</span>, and
-        <span className="text-emph"> interiors</span>. Let us work with you to create an expression of art.
-      </p>),
-        width: 2, height:2, isFull:true},
-      {content: (<span id="event" className="captioned">
-        <GridLightbox thumbNail={require('./assets/eventmapper.jpg')}
+      {content: (<BoxContainer isCaptioned containsImg>
+        <GridLightbox
           attr={{
-            titles: ['EventMapper Homepage','Upcoming and Trending Events','Create an Event', 'Find your Event'],
+            titles: [(<ViewArticle to="/paramount" />),
+                    (<ViewArticle to="/paramount" />),
+                    (<ViewArticle to="/paramount" />),
+                    (<ViewArticle to="/paramount" />)],
             images: [
-              require('../Articles/assets/eventmapper/Home.png'),
-              require('../Articles/assets/eventmapper/home-dashboard.png'),
-              require('../Articles/assets/eventmapper/create-event.png'),
-              require('../Articles/assets/eventmapper/mapview-eventinfo.png')],
-            captions: ['','','']
-          }} />
-        <div className="caption"><p>Event Mapper</p></div></span>),
-        width: 2, height:1, isFull:true},
-      {width: 1,height:3},
-      {width: 2,height:2},
-      {width: 2,height:2},
-      {width: 1,height:3},
-
-      {content: (<span id="paramount"  className="captioned">
-        <GridLightbox thumbNail={require('./assets/paramount.jpg')}
-          attr={{
-            titles: [(<Link to="/paramount"><Button>View the full article!</Button></Link>),
-                      (<Link to="/paramount"><Button>View the full article!</Button></Link>),
-                      (<Link to="/paramount"><Button>View the full article!</Button></Link>),
-                      (<Link to="/paramount"><Button>View the full article!</Button></Link>)],
-            images: [
-              require('../Articles/assets/paramount/carousel.png'),
-              require('../Articles/assets/paramount/turnkey.png'),
-              require('../Articles/assets/paramount/case_study.png'),
-              require('../Articles/assets/paramount/leadership.png')],
+              require('../Articles/assets/paramount/homepage.png'),
+              require('../Articles/assets/paramount/gallery.png'),
+              require('../Articles/assets/paramount/clients.png'),
+              require('../Articles/assets/paramount/slideshow.png')],
             captions: ['','','','']
-          }} />
-        <div className="caption"><p>Paramount Construction</p></div></span>),
-        width: 1, height:2, isFull:true},
+          }}>
+          <BackgroundImg image={require('./assets/paramount.jpg')}/>
+        </GridLightbox>
+        <Caption caption="Paramount Construction" /></BoxContainer>),
+        width: 1, height:3, isFull:true},
+        {content: (<BoxContainer isCaptioned containsImg>
+          <GridLightbox
+            attr={{
+              titles: [(<ViewArticle to="/zuzu" />),
+                      (<ViewArticle to="/zuzu" />),
+                      (<ViewArticle to="/zuzu" />),
+                      (<ViewArticle to="/zuzu" />)],
+              images: [
+                require('../Articles/assets/zuzu/homepage.png'),
+                require('../Articles/assets/zuzu/menu.png'),
+                require('../Articles/assets/zuzu/menu_items.png')],
+              captions: ['','','','']
+            }}>
+            <BackgroundImg image={require('./assets/zuzu.jpg')}/>
+          </GridLightbox>
+          <Caption caption="Zuzu Cuisine" /></BoxContainer>),
+          width: 2, height:1, isFull:true},
+          {content: (<p className="slogan">
+            <span className="emph-text-main">Humaitek</span> is a design and innovation studio based in <span className="emph-text-main">Washington, D.C.</span> We design
+            <span className="emph-text-main"> websites</span>,
+            <span className="emph-text-main"> books</span>,
+            <span className="emph-text-main"> posters</span>,
+            <span className="emph-text-main"> films</span>,
+            <span className="emph-text-main"> products</span>,
+            <span className="emph-text-main"> architecture</span>, and
+            <span className="emph-text-main"> interiors</span>.
+            Let us work with you to create an expression of art.
+          </p>),
+            width: 2, height:2, isFull:true},
+        {content: (<BoxContainer isCaptioned containsImg>
+          <GridLightbox
+            attr={{
+              titles: ['EventMapper Homepage','Upcoming and Trending Events',
+              'Create an Event', 'Find your Event'],
+              images: [
+                require('../Articles/assets/eventmapper/Home.png'),
+                require('../Articles/assets/eventmapper/home-dashboard.png'),
+                require('../Articles/assets/eventmapper/create-event.png'),
+                require('../Articles/assets/eventmapper/mapview-eventinfo.png')],
+              captions: ['','','']
+            }}>
+            <BackgroundImg image={require('./assets/eventmapper.jpg')}/>
+          </GridLightbox>
+          <Caption caption="Event Mapper" /></BoxContainer>),
+          width: 2, height:1, isFull:true},
+      {width: 1,height:3},
+      {width: 2,height:2},
+      {width: 2,height:2},
+      {width: 1,height:3},
 
-      {content: (<span id="grid"  className="captioned">
-        <Link to=""><img className="img-responsive" src={require('./assets/grid.jpg')}></img></Link>
-        <div className="caption"><p>React Grid Layout</p></div></span>),
-        width: 1,height:1,isFull:true},
-
-      {content: (<span id="vrgame"  className="captioned">
-        <Link to=""><img className="img-responsive" src={require('./assets/vrgame.jpg')}></img></Link>
-        <div className="caption"><p>Mixed Reality Horror Game</p></div></span>),
+        {content: (<BoxContainer isCaptioned containsImg>
+          <GridLightbox
+            attr={{
+              titles: [(<ViewArticle to="/sarantis" />),
+                      (<ViewArticle to="/sarantis" />)],
+              images: [
+                require('../Articles/assets/sarantis/carousel.png'),
+                require('../Articles/assets/sarantis/commercial.png')],
+              captions: ['','']
+            }}>
+              <BackgroundImg image={require('./assets/sarantis.jpg')}/>
+            </GridLightbox>
+            <Caption caption="Sarantis Properties" /></BoxContainer>),
+          width: 1, height:3, isFull:true},
+      {content: (<BoxContainer isCaptioned containsImg>
+        <BackgroundImg image={require('./assets/metropolitian.jpg')}/>
+        <Caption caption="Metropolitian Carpet" /></BoxContainer>),
         width: 2,height:1,isFull:true},
-
-      {content: (<span id="metropolitian"  className="captioned">
-        <Link to=""><img className="img-responsive" src={require('./assets/metropolitian.jpg')}></img></Link>
-        <div className="caption"><p>Metropolitian Carpet</p></div></span>),
-        width: 1,height:1,isFull:true},
-      {content: (<span id="sarantis"  className="captioned">
-        <GridLightbox thumbNail={require('./assets/sarantis.jpg')}
-          attr={{
-            titles: [(<Link to="/sarantis"><Button>View the full article!</Button></Link>),
-                      (<Link to="/sarantis"><Button>View the full article!</Button></Link>)],
-            images: [
-              require('../Articles/assets/sarantis/carousel.png'),
-              require('../Articles/assets/sarantis/commercial.png')],
-            captions: ['','']
-          }} />
-        <div className="caption"><p>Sarantis Properties</p></div></span>),
-        width: 1,
-        height:2,
-        isFull:true},
-      {content: (<span id="control"  className="captioned"><Link to=""><img className="img-responsive" src={require('./assets/control.jpg')}></img></Link>
-                <div className="caption"><p>Control - Book</p></div></span>),
-        width: 2,
-        height:1,
-        isFull:true}
       ];
     return(
       <div className="home">

@@ -1,20 +1,9 @@
+@import '../../_colors.scss';
 #navbar{
-  & {
-    width: 100%;
-    padding: 20px 0px 20px 0px;
-    display: flex;
-    justify-content: center;
-    opacity: .9;
-    background: white;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
-    -ms-transition: padding 0.3s;
-    -o-transition: padding 0.3s;
-    transition: padding 0.3s;
-  }
-  .material-icons {
-    display: none;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: $color4;
   .line-hover{
     &  > p {
       position: relative;
@@ -26,81 +15,67 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #2068A2;
+      background-color: $color2;
       visibility: hidden;
-      -webkit-transform: scaleX(0);
       transform: scaleX(0);
-      -webkit-transition: all 0.3s ease-in-out 0s;
       transition: all 0.3s ease-in-out 0s;
     }
     & > p:hover:before{
       visibility: visible;
-      -webkit-transform: scaleX(1);
       transform: scaleX(1);
     }
   }
+  .material-icons {
+    display: none;
+  }
   .link {
     text-align: center;
+    cursor: pointer;
     width: 20%;
     p {
       margin-top: 20px;
       padding: 50px 0px 58px 0px;
-      color:#3f964d;
       font-size: 30px;
-      -webkit-transition: padding 0.3s;
-      -moz-transition: padding 0.3s;
-      -ms-transition: padding 0.3s;
-      -o-transition: padding 0.3s;
       transition: padding 0.3s;
     }
     p:hover {
       cursor: pointer;
       text-decoration: none;
-      color:#404040;
-      background-color: #e7e7e7;
+      color: $color6;
+      background-color: $color5;
     }
   }
   .logo-container{
-    &{
-      min-width: 300px;
-      fill: transparent;
-      stroke: black;
-      -webkit-animation: 3s draw linear forwards;
-      animation: 3s draw linear forwards;
-     -moz-animation: 3s draw linear forwards;
-     -o-animation: 3s draw linear forwards;
-     p {
-      color: black;
-     }
-    }
-    &:hover{
-      cursor: pointer;
-      background: #093377;
-      stroke: white;
-      p{
-        color: white;
-      }
-    }
+    width: 340px;
+    fill: transparent;
+    stroke: black;
+    animation: 3s draw linear forwards;
     .logo {
-      & {
-        margin: 20px;
-        position: relative;
-        height: 155px;
+      margin: 20px;
+      margin-bottom: 0px;
+      position: relative;
+      color: black;
+      text-transform: uppercase;
+      font-family: 'Advent Pro', sans-serif;
+      font-weight: 600;
+      font-size: 52px;
+      p {
+        position: absolute;
+        left: 15%;
+        top: 25%;
       }
       .material-icons {
         position: absolute;
         left: 35%;
         top: 30%;
-        color: black;
       }
-      p {
-        text-transform: uppercase;
-        font-family: 'Advent Pro', sans-serif;
-        font-weight: 600;
-        font-size: 52px;
-        position: absolute;
-        left: 15%;
-        top: 25%;
+    }
+    &:hover{
+      cursor: pointer;
+      background: $color3;
+      stroke: white;
+      .logo{
+        color: white;
       }
     }
     @keyframes draw {
@@ -118,6 +93,8 @@
   }
 
   @media(max-width:600px){
+    justify-content: space-around;
+    align-items: center;
     p {
       display: none;
     }
@@ -126,7 +103,6 @@
       font-size: 50px;
     }
     .logo-container{
-      min-width: 150px;
       width: 200px;
     }
     .logo-container:hover {
@@ -135,14 +111,8 @@
       }
     }
     .link {
-      width: auto;
-      .material-icons{
-        color: #3f964d;
-        margin: 70px 0px 58px 0px;
-      }
       .material-icons:hover{
-        cursor: pointer;
-        color:#404040;
+        color: $color6;
       }
     }
   }

@@ -52,7 +52,7 @@ var Contact = React.createClass({
           </div>
           <div className="form-group">
             <button
-              className="btn btn-block btn-success"
+              className="btn btn-block emph-background"
               type="submit"> Submit
             </button>
           </div>

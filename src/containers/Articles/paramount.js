@@ -9,9 +9,9 @@ var Paramount = function(props) {
       <div className="overview">
         <div className="involvement">
           Involvement:
-          <span>Design - Half </span>
-          <span>Development - In Progress </span>
-          <a className="website-url" href="http://test.paramountserv.com">View Client Website</a>
+          <span>Design - Minor </span>
+          <span>Development - Full </span>
+          <a className="website-url" href="http://paramountserv.com/#/">View Client Website</a>
         </div>
 
       </div>
@@ -21,12 +21,16 @@ var Paramount = function(props) {
         everything from the simplest kitchen and bath renovations to the most .
         complex turn - key projects.
       </p>
+      <img src={require('./assets/paramount/homepage.png')} />
       <p>
         Similiar to Sarantis Properties, we sought to show off Paramount's work
-        in an obvious way through the use of an autoscrolling carousel. However,
-        there is a twist since these carousels maintain a caption which provided
-        context and can be clicked to take you to page that details that specific process further.
+        in an obvious way through the use of an autoscrolling carousel. However, this time instead of
+        the carousel taking a specific width it takes a certain height.
+        Therefore since all the images are different the empty space on the right side will vary.
+        Since a consitent height for each page was very important to the client this came through the
+        design in this manner.
       </p>
+      <img src={require('./assets/paramount/slideshow.png')} />
       <p>
         Paramount offers an extensive list of services. As a snapshot, we provided
         a scrollable description of each service. If more detail is required,
@@ -36,12 +40,15 @@ var Paramount = function(props) {
         is clicked, a gallery is displayed at full screen. Through this we can have
         really nice full size images with useful captions at the top or bottom.
       </p>
+      <img src={require('./assets/paramount/clients.png')} />
       <p>
-        Case Studies were an idea to have a more in-depth description about key projects.
-        The theory behind the idea was that it provides an outlet for Paramount
-        to display their knowledge, expertise, and service while tying it to
-        tangible work to the client.
+        On the clients page we found that a block of text was not visually appealing
+        and so we provided a themed background image. On the other hand,
+        the gallery page has a set of images showing off Paramount's work. If you
+        click an image it will open a slideshow to that specific image. If the user
+        wants to continue scrolling in this view they can.
       </p>
+      <img src={require('./assets/paramount/gallery.png')} />
       <p>
         The final page to highlight was within the About Us tab, Leadership page.
         We provide a grid of key Paramount employees. As you hover on the image,
@@ -50,8 +57,7 @@ var Paramount = function(props) {
         with all relevant facts of the employee. It is important that Paramount's clients
         can identify them by face because it enhances familiarity and understanding.
       </p>
-
-
+      <img src={require('./assets/paramount/leadership.png')} />
   </div>
   )
 }

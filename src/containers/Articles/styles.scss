@@ -1,3 +1,4 @@
+@import '../../_colors.scss';
 .article {
   width: 60%;
   margin: auto;
@@ -8,25 +9,24 @@
       list-style: none;
       font-size: 20px;
       padding: .2vw;
-      color: #1495ff;
+      color: $color2;
       span {
         padding: 5px 10px;
         margin: 0px 5px;
         font-size: 15px;
-        border: 1px dashed #1495ff;
+        border: 1px dashed $color2;
         border-radius: 5px;
-        white-space: pre-line;
       }
     }
     .website-url {
       float: right;
-      border: 1px solid #1495ff;
+      border: 1px solid $color2;
       font-size: 15px;
       border-radius: 5px;
       padding: 5px 10px;
     }
     .website-url:hover{
-      background: #e7e7e7;
+      background: $color5;
       text-decoration: none;
     }
 }

@@ -9,7 +9,7 @@ var Navigation = React.createClass({
       return (
         <div className="wrapper">
           <div id="navbar">
-            <LinkContainer to="explore"><div className="link line-hover">
+            <LinkContainer to="explore"><div className="link line-hover emph-text-main">
               <p>Explore</p>
               <i className="material-icons">explore</i>
             </div></LinkContainer>
@@ -24,7 +24,7 @@ var Navigation = React.createClass({
                 </div>
               </div>
             </LinkContainer>
-            <LinkContainer to="contact"><div className="link line-hover">
+            <LinkContainer to="contact"><div className="link line-hover emph-text-main">
               <p>Contact</p>
               <i className="material-icons">feedback</i>
             </div></LinkContainer>

@@ -1,13 +1,15 @@
+@import '../../_colors.scss';
 .leadership {
   width: 80%;
   margin: auto;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap:
+   wrap;
   .flip-container {
 	   perspective: 320px;
     .ant-card-body{
-      outline: 2px #e7e7e7 solid;
+      outline: 2px $color5 solid;
       transition: 0.6s;
       transform-style: preserve-3d;
 
@@ -26,7 +28,7 @@
           padding: 10px 16px;
           text-align: center;
           p{
-            color: #999;
+            color: $color6;
           }
         }
       }
