@@ -49,12 +49,12 @@ var Explore = React.createClass({
       <Hero color="isLight">
       <HeroBody>
         <button className="emph-background" onClick={() => this.handleSlideClick(-1)}>
-          <img src={require('./assets/left_arrow.png')} /></button>
+          <i className="material-icons">keyboard_arrow_left</i></button>
         <Container hasTextCentered>
           <Title>{page.title}</Title>
         </Container>
         <button className="emph-background" onClick={() => this.handleSlideClick(1)}>
-          <img src={require('./assets/right_arrow.png')} /></button>
+          <i className="material-icons">keyboard_arrow_right</i></button>
       </HeroBody>
     </Hero>
       <div className="spacing" />

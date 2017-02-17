@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import Grid from '../Box/index';
 import Lightbox from '../../components/lightbox/index';
 import {Button} from 'antd';
+import DocumentMeta from 'react-document-meta';
 import './styles.scss';
 
 
@@ -42,6 +43,17 @@ var ViewArticle = function(props){
 
 var Home = React.createClass({
   render: function(){
+    const meta = {
+      title: 'Humaitek',
+      description: 'Humaitek is a design and innovation studio based in Washington, D.C.',
+      canonical:'http://humaitek.com/#/',
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: 'web, development, design, react, studio, dmv, dc, javascript, html, css'
+        }
+      }
+    };
     var inputs = [
       {width: 1,height:3},
       {width: 2,height:3},
@@ -134,6 +146,7 @@ var Home = React.createClass({
       ];
     return(
       <div className="home">
+        <DocumentMeta {...meta} />
         <Grid inputs={inputs} width={4} height={4}>
         </Grid>
       </div>

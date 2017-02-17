@@ -1,11 +1,23 @@
 import React from 'react';
+import DocumentMeta from 'react-document-meta';
 import './styles.scss';
 
 
 var Paramount = function(props) {
+  const meta = {
+    title: 'Paramount Construction - Humaitek',
+    description: 'Paramount is proud to have renovated properties for many of the most respected and well-known names in the multi-housing industry. ',
+    canonical:'http://humaitek.com/#/paramount',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'web, development, design, react, studio, dmv, dc, javascript, html, css'
+      }
+    }
+  };
   return (
     <div className="article">
-
+      <DocumentMeta {...meta} />
       <div className="overview">
         <div className="involvement">
           Involvement:

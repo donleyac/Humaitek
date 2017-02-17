@@ -1,4 +1,5 @@
 import React from 'react';
+import DocumentMeta from 'react-document-meta';
 import './styles.scss';
 
 var Contact = React.createClass({
@@ -26,8 +27,20 @@ var Contact = React.createClass({
     window.open(link);
   },
   render(){
+    const meta = {
+      title: 'Contact - Humaitek',
+      description: 'Contact Humaitek for all your web design/development needs.',
+      canonical:'http://humaitek.com/#/contact',
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: 'web, development, design, react, studio, dmv, dc, javascript, html, css'
+        }
+      }
+    };
     return(
     <div className="contact">
+      <DocumentMeta {...meta} />
       <div className="col-sm-offset-2 col-sm-4">
         <form onSubmit={this.handleSubmit} enctype="multipart/form-data">
           <div className="form-group">

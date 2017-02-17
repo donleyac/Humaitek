@@ -1,11 +1,23 @@
 import React from 'react';
+import DocumentMeta from 'react-document-meta';
 import './styles.scss';
 
 
 var SarantisProperties = function(props) {
+  const meta = {
+    title: 'SarantisProperties - Humaitek',
+    description: 'Sarantis Properties is a property management company in the DMV.',
+    canonical:'http://humaitek.com/#/sarantis',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'web, development, design, react, studio, dmv, dc, javascript, html, css'
+      }
+    }
+  };
   return (
     <div className="article">
-
+      <DocumentMeta {...meta} />
       <div className="overview">
         <div className="involvement">
           Involvement:

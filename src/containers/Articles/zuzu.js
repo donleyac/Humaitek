@@ -1,11 +1,23 @@
 import React from 'react';
+import DocumentMeta from 'react-document-meta';
 import './styles.scss';
 
 
 export default function(props) {
+  const meta = {
+    title: 'Zuzu Cuisine - Humaitek',
+    description: 'Zuzu Cuisine is a food service company the specializes in fresh Mediterranean food.',
+    canonical:'http://humaitek.com/#/zuzu',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'web, development, design, react, studio, dmv, dc, javascript, html, css'
+      }
+    }
+  };
   return (
     <div className="article">
-
+      <DocumentMeta {...meta} />
       <div className="overview">
         <div className="involvement">
           Involvement:
